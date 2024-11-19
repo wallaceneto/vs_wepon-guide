@@ -1,10 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Image } from 'expo-image';
+
+import item from './assets/passive-items/Sprite-Skull_OManiac.webp';
+import wepom from './assets/wepons/Sprite-Runetracer.webp';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>Evolution guide</Text>
+      <Image
+        style={styles.image}
+        source={wepom}
+        contentFit="fill"
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -16,5 +25,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  image: {
+    width: 52,
+    height: 52,
   },
 });
