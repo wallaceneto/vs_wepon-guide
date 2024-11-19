@@ -1,18 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Image } from 'expo-image';
+import { StyleSheet, View } from 'react-native';
 
 import wepom from './assets/evolutions/base/Sprite-Valkyrie_Turner.webp';
+import Home from './src/screens/Home';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Evolution guide</Text>
-      <Image
-        style={styles.image}
-        source={wepom}
-        contentFit="fill"
-      />
+      <Home />
       <StatusBar style="auto" />
     </View>
   );
