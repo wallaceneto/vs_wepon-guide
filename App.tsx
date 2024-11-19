@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
+import './languages/i18n';
 
-import wepom from './assets/evolutions/base/Sprite-Valkyrie_Turner.webp';
 import Home from './src/screens/Home';
 
 export default function App() {

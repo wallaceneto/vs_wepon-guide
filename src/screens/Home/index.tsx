@@ -1,5 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
+import { useTranslation } from 'react-i18next';
 
 import data from '../../../global/mocks/base_wepons.json';
 import { IBaseSpriteKeys, IPassiveSpriteKeys } from '../../../global/types';
@@ -7,9 +8,11 @@ import { baseSprites, passiveSprites } from '../../../global/requires';
 
 export default function Home() {
   const wepons = data;
+  const {t, i18n} = useTranslation();
 
   return (
     <View style={styles.container}>
+      <Text style={styles.text}>{t('About info')}</Text>
       <FlatList
         data={wepons}
         keyExtractor={item => item.id}
@@ -48,6 +51,9 @@ const styles = StyleSheet.create({
   image: {
     width: 52,
     height: 52,
+  },
+  text: {
+    marginTop: 32,
   },
   card: {
     marginTop: 48,

@@ -1,0 +1,19 @@
+{
+  "translation": {
+    "Evolution Guide": "Guia de evoluções",
+    "Base wepons": "Jogo base",
+    "Ode to Castlevania": "Ode to Castlevania",
+    "Max level": "Level máximo: {{level}}",
+    "Unlock requirements": "Requisitos para desbloqueio:",
+    "Unlock by default": "Desbloqueado por padrão",
+    "Evolution": "Evolução",
+    "Requires": "Requisito:",
+    "at any level": "em qualquer level",
+    "Language": "Idioma:",
+    "Portuguese": "Português",
+    "English": "Inglês",
+    "About": "Sobre o app:",
+    "About info": "Todos os icones e descrição dos itens foram obtidos do Vampire Survivors Wiki, disponiveis sob licença CC-BY-SA",
+    "Version": "Versão {{version}}"
+  }
+}
