@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'expo-image';
 
 import item from './assets/passive-items/Sprite-Skull_OManiac.webp';
-import wepom from './assets/wepons/Sprite-Runetracer.webp';
+import wepom from './assets/castlevania/Sprite-Iron_Shield.webp';
 
 export default function App() {
   return (
