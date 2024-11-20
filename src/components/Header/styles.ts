@@ -1,6 +1,10 @@
 import {StyleSheet} from 'react-native';
+import { useContext } from 'react';
+
+import { ThemeContext } from '../../context';
 
 const useStyles = () => {
+  const {colors} = useContext(ThemeContext);
 
   return StyleSheet.create({
     banner: {
@@ -16,7 +20,7 @@ const useStyles = () => {
       left: 14,
     },
     divider: {
-      backgroundColor: '#EBEBEB',
+      backgroundColor: colors.dividerColor,
       height: 2,
       width: 'auto',
     },
@@ -26,7 +30,7 @@ const useStyles = () => {
       padding: 16,
     },
     title: {
-      color: '#fff',
+      color: colors.textColor,
       fontSize: 20,
       fontWeight: 'heavy',
     },

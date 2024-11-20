@@ -1,10 +1,14 @@
 import {StyleSheet} from 'react-native';
+import { useContext } from 'react';
+
+import { ThemeContext } from '../../context';
 
 const useStyles = () => {
+  const {colors} = useContext(ThemeContext);
 
   return StyleSheet.create({
     container: {
-      backgroundColor: "#FFCF67",
+      backgroundColor: colors.cardBorderColor,
       borderRadius: 8,
       height: 60,
       width: 60,
@@ -14,7 +18,7 @@ const useStyles = () => {
       marginBottom: 16,
     },
     image: {
-      backgroundColor: "#fff",
+      backgroundColor: colors.cardBgColor,
       borderRadius: 8,
       height: 53,
       width: 53,
