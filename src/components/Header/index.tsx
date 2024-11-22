@@ -5,8 +5,9 @@ import { Image, ImageBackground } from 'expo-image';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import useStyles from './styles';
+import { IHeaderProps } from './types';
 
-const Header: React.FC = () => {
+const Header: React.FC<IHeaderProps> = ({ handleOpen }) => {
   const {t} = useTranslation();
   const style = useStyles();
 
@@ -33,7 +34,7 @@ const Header: React.FC = () => {
           {t('Evolution Guide')}
         </Text>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => {}}>
+        <TouchableOpacity activeOpacity={0.7} onPress={handleOpen}>
           <Ionicons name="settings-sharp" size={24} color="white" />
         </TouchableOpacity>
       </View>
