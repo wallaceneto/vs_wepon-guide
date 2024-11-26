@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { View, FlatList } from 'react-native';
+import { useRef, useState } from 'react';
+import { View, FlatList, TouchableOpacity } from 'react-native';
 import { BottomSheetMethods } from '@devvie/bottom-sheet';
 
 import useStyles from './styles';
@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 import WeponIcon from '../../components/WeponIcon';
 import Bottomsheet from '../../components/Bottomsheet';
 import TextComponent from '../../components/TextComponent';
+import ItemModal from '../../components/ItemModal';
 
 const mock = [{
   id: '1',
@@ -43,16 +44,22 @@ export default function Home() {
   const bottomsheetRef = useRef<BottomSheetMethods>(null);
   const handleOpenOptions = () => bottomsheetRef.current?.open();
 
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={style.container}>
+      <ItemModal visible={modalVisible} setVisible={setModalVisible} />
+
       <Header handleOpen={handleOpenOptions} />
 
       <View style={style.section}>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
           <TextComponent
             text='Base wepons'
             bold
             styles={style.text}
           />
+        </TouchableOpacity>
 
         <FlatList
           data={mock}

@@ -15,7 +15,7 @@ const useStyles = () => {
       justifyContent: 'center',
       alignItems: 'center',
       marginHorizontal: 6,
-      marginBottom: 16,
+      marginVertical: 8,
     },
     image: {
       backgroundColor: colors.cardBgColor,
