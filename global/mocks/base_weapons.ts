@@ -1,3 +1,4 @@
+const weapons =
 [
   {
     "id": "0",
@@ -37,18 +38,7 @@
       "require_text": "at any level",
       "require_sprit": "Bracer"
     }
-  },
-  {
-    "id": "3",
-    "sprit": "Knife",
-    "name": "Knife",
-    "max_level": 8,
-    "unlock_requirements": "Unlocked by default",
-    "evolution": {
-      "sprit": "Thousand_Edge",
-      "name": "Thousand Edge",
-      "require_text": "at any level",
-      "require_sprit": "Bracer"
-    }
   }
-]
+];
+
+export default weapons;

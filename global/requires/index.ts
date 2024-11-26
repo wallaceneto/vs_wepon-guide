@@ -1,2 +1,2 @@
-export * from './base-wepons-sprites';
+export * from './base-weapons-sprites';
 export * from './passive-items-sprites';

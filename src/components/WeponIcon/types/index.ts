@@ -1,1 +1,1 @@
-export * from './IWeponIconProps';
+export * from './IWeaponIconProps';

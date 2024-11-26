@@ -3,27 +3,35 @@ import { TouchableOpacity, View } from 'react-native';
 import { Image } from 'expo-image';
 
 import useStyles from './styles';
-import { IWeponIconProps } from './types';
+import { IWeaponIconProps } from './types';
 import { baseSprites } from '../../../global/requires';
 import { IBaseSpriteKeys } from '../../../global/types';
 
-const WeponIcon: React.FC<IWeponIconProps> = ({image}: IWeponIconProps) => {
+const WeponIcon: React.FC<IWeaponIconProps> = ({ weapon, setModalVisible, disable }: IWeaponIconProps) => {
   const style = useStyles();
 
-  const weponSprit = baseSprites[image as IBaseSpriteKeys]
+  const weaponSprit = baseSprites[weapon.sprit as IBaseSpriteKeys]
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.7}
-      onPress={() => {}}
-    >
+    disable ? 
       <View style={style.container}>
         <Image 
           style={style.image} 
-          source={weponSprit}
+          source={weaponSprit}
         />
       </View>
-    </TouchableOpacity>
+    :
+      <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={() => setModalVisible(true)}
+      >
+        <View style={style.container}>
+          <Image 
+            style={style.image} 
+            source={weaponSprit}
+          />
+        </View>
+      </TouchableOpacity>
   );
 }
 
