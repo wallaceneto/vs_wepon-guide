@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
+import i18next from 'i18next';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import BottomSheet from '@devvie/bottom-sheet';
 
 import useStyles from './styles';
@@ -9,6 +11,16 @@ import TextComponent from '../TextComponent';
 
 const Bottomsheet: React.FC<IBottomsheetProps> = ({ bottomsheetRef }) => {
   const style = useStyles();
+
+  const handleChangeLanguage = async (language: string) => {
+    i18next.changeLanguage(language);
+
+    try {
+      await AsyncStorage.setItem('app-language', language);
+    } catch(e) {
+      console.log(e);
+    }
+  }
 
   return (
     <BottomSheet ref={bottomsheetRef} style={style.background}>
@@ -24,7 +36,7 @@ const Bottomsheet: React.FC<IBottomsheetProps> = ({ bottomsheetRef }) => {
           <TouchableOpacity
             style={style.langOption}
             activeOpacity={0.7}
-            onPress={() => {}}
+            onPress={() => handleChangeLanguage('pt-BR')}
           >
             <Image 
               style={style.langImage} 
@@ -37,7 +49,7 @@ const Bottomsheet: React.FC<IBottomsheetProps> = ({ bottomsheetRef }) => {
           <TouchableOpacity
             style={style.langOption}
             activeOpacity={0.7}
-            onPress={() => {}}
+            onPress={() => handleChangeLanguage('en-US')}
           >
             <Image 
               style={style.langImage} 

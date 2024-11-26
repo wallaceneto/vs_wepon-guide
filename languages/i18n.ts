@@ -5,7 +5,7 @@ import ptBr from './pt-br.json';
 
 export default i18n.use(initReactI18next).init({
   compatibilityJSON: 'v3',
-  lng: 'pt-BR',
+  lng: 'en-US',
   resources: {
     'en-US': enUs,
     'pt-BR': ptBr,
