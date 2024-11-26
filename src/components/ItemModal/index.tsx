@@ -1,34 +1,36 @@
 import React from 'react';
 import { Modal, TouchableOpacity, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Image } from 'expo-image';
 
 import useStyles from './styles';
 import TextComponent from '../TextComponent';
 import { IItemModalProps } from './types';
 
 import WeponIcon from '../WeponIcon';
+import { IPassiveSpriteKeys } from '../../../global/types';
 import { passiveSprites } from '../../../global/requires';
-import { Image } from 'expo-image';
 
-const ItemModal: React.FC<IItemModalProps> = (props: IItemModalProps) => {
+const ItemModal: React.FC<IItemModalProps> = ({ visible, setVisible, weapon}: IItemModalProps) => {
   const style = useStyles();
 
-  const requireSprite = passiveSprites['Hollow_Heart']; 
+  const evolution = weapon.evolution;
+  const requireSprite = passiveSprites[evolution.require_sprit as IPassiveSpriteKeys];
 
   return (
     <Modal
       transparent
-      visible={props.visible}
-      onRequestClose={() => {props.setVisible(false)}}
+      visible={visible}
+      onRequestClose={() => setVisible(false)}
     >
       <View style={style.container}>
         <View style={style.card}>
           <View style={style.header}>
             <View style={style.headerLeft}>
-              <WeponIcon image='Whip' />
+              <WeponIcon weapon={weapon} disable />
 
               <TextComponent 
-                text='Whip' 
+                text={weapon.name} 
                 bold 
                 size={20} 
                 styles={style.headerText}  
@@ -37,7 +39,7 @@ const ItemModal: React.FC<IItemModalProps> = (props: IItemModalProps) => {
 
             <TouchableOpacity 
               activeOpacity={0.7} 
-              onPress={() => props.setVisible(false)}
+              onPress={() => setVisible(false)}
             >
               <Ionicons name="close" size={32} color="white" />
             </TouchableOpacity>
@@ -52,7 +54,7 @@ const ItemModal: React.FC<IItemModalProps> = (props: IItemModalProps) => {
                 text='Max level'
                 bold
               />
-              <TextComponent text='8' />
+              <TextComponent text={weapon.max_level.toString()} />
             </View>
 
             <View style={style.contentTopic}>
@@ -61,7 +63,7 @@ const ItemModal: React.FC<IItemModalProps> = (props: IItemModalProps) => {
                 bold
               />
               <TextComponent 
-                text='Unlock by default' 
+                text={weapon.unlock_requirements} 
                 styles={style.contentTopicText}
               />
             </View>
@@ -73,11 +75,11 @@ const ItemModal: React.FC<IItemModalProps> = (props: IItemModalProps) => {
             />
 
             <View style={style.evolutionContainer}>
-              <WeponIcon image='Whip' />
+              <WeponIcon weapon={weapon} disable />
 
               <View style={style.evolutionInfo}>
                 <TextComponent
-                  text='Bloody Tear'
+                  text={evolution.name}
                   bold
                 />
 
@@ -93,7 +95,7 @@ const ItemModal: React.FC<IItemModalProps> = (props: IItemModalProps) => {
                   />
 
                   <TextComponent
-                    text='at any level'
+                    text={evolution.require_text}
                     styles={style.contentTopicText}
                   />
                 </View>

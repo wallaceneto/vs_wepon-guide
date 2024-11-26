@@ -10,6 +10,7 @@ import TextComponent from '../../components/TextComponent';
 import ItemModal from '../../components/ItemModal';
 
 import weapons from '../../../global/mocks/base_weapons';
+import { IWeapon } from '../../../global/types';
 
 export default function Home() {
   const style = useStyles();
@@ -17,11 +18,17 @@ export default function Home() {
   const bottomsheetRef = useRef<BottomSheetMethods>(null);
   const handleOpenOptions = () => bottomsheetRef.current?.open();
 
+  const [currentWeapon, setCurrentWeapon] = useState(weapons[0]);
   const [modalVisible, setModalVisible] = useState(false);
+
+  const handleOpenModal = (weapon: IWeapon) => {
+    setCurrentWeapon(weapon);
+    setModalVisible(true);
+  }
 
   return (
     <View style={style.container}>
-      <ItemModal visible={modalVisible} setVisible={setModalVisible} />
+      <ItemModal weapon={currentWeapon} visible={modalVisible} setVisible={setModalVisible} />
 
       <Header handleOpen={handleOpenOptions} />
 
@@ -38,7 +45,7 @@ export default function Home() {
           numColumns={5}
           renderItem={
             ({item}) => 
-            <WeponIcon weapon={item} setModalVisible={setModalVisible} /> 
+            <WeponIcon weapon={item} onPress={handleOpenModal} /> 
           }
         />
       </View>

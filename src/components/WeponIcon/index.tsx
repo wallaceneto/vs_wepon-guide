@@ -7,7 +7,7 @@ import { IWeaponIconProps } from './types';
 import { baseSprites } from '../../../global/requires';
 import { IBaseSpriteKeys } from '../../../global/types';
 
-const WeponIcon: React.FC<IWeaponIconProps> = ({ weapon, setModalVisible, disable }: IWeaponIconProps) => {
+const WeponIcon: React.FC<IWeaponIconProps> = ({ weapon, onPress, disable }: IWeaponIconProps) => {
   const style = useStyles();
 
   const weaponSprit = baseSprites[weapon.sprit as IBaseSpriteKeys]
@@ -23,7 +23,7 @@ const WeponIcon: React.FC<IWeaponIconProps> = ({ weapon, setModalVisible, disabl
     :
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={() => setModalVisible(true)}
+        onPress={onPress ? () => onPress(weapon) : () => {}}
       >
         <View style={style.container}>
           <Image 
