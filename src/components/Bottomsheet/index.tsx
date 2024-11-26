@@ -1,60 +1,81 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import { View, TouchableOpacity } from 'react-native';
 import BottomSheet from '@devvie/bottom-sheet';
 
 import useStyles from './styles';
 import { IBottomsheetProps } from './types';
 import { Image } from 'expo-image';
+import TextComponent from '../TextComponent';
 
 const Bottomsheet: React.FC<IBottomsheetProps> = ({ bottomsheetRef }) => {
-  const {t} = useTranslation();
-  const styles = useStyles();
+  const style = useStyles();
 
   return (
-    <BottomSheet ref={bottomsheetRef} style={styles.background}>
-      <View style={styles.content}>
+    <BottomSheet ref={bottomsheetRef} style={style.background}>
+      <View style={style.content}>
         
-        <Text style={styles.title}>{t('Language')}</Text>
-        <View style={styles.language}>
+        <TextComponent
+          text='Language'
+          bold
+          size={20}
+          styles={style.title}
+        />
+        <View>
           <TouchableOpacity
-            style={styles.langOption}
+            style={style.langOption}
             activeOpacity={0.7}
             onPress={() => {}}
           >
             <Image 
-              style={styles.langImage} 
+              style={style.langImage} 
               source={require('../../../assets/general/brazil-.png')} 
             />
 
-            <Text style={styles.langText}>{t('Portuguese')}</Text>
+            <TextComponent text='Portuguese' />
           </TouchableOpacity>
           
           <TouchableOpacity
-            style={styles.langOption}
+            style={style.langOption}
             activeOpacity={0.7}
             onPress={() => {}}
           >
             <Image 
-              style={styles.langImage} 
+              style={style.langImage} 
               source={require('../../../assets/general/united-kingdom.png')} 
             />
 
-            <Text style={styles.langText}>{t('English')}</Text>
+            <TextComponent text='English' />
           </TouchableOpacity>
         </View>
 
-        <View style={styles.about}>
-          <Text style={styles.title}>{t('About')}</Text>
+        <View>
+          <TextComponent
+            text='About'
+            bold
+            size={20}
+            styles={style.title}
+          />
 
-          <View style={styles.aboutInfo}>
-            <Text style={styles.text}>{t('License info')}</Text>
+          <View style={style.aboutInfo}>
+            <TextComponent
+              text='License info'
+              size={12}
+              styles={style.text}
+            />
 
-            <Text style={styles.text}>{t('Icon info')}</Text>
+            <TextComponent
+              text='Icon info'
+              size={12}
+              styles={style.text}
+            />
           </View>
         </View>
 
-        <Text style={styles.version}>{t('Version', {version: '0.1.0'})}</Text>
+        <TextComponent
+          text='Version'
+          size={12}
+          styles={style.version}
+        />
         
       </View>
     </BottomSheet>

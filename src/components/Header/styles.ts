@@ -29,11 +29,6 @@ const useStyles = () => {
       justifyContent: 'space-between',
       padding: 16,
     },
-    title: {
-      color: colors.textColor,
-      fontSize: 20,
-      fontWeight: 'heavy',
-    },
   });
 };
 

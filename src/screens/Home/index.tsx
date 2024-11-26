@@ -1,12 +1,12 @@
 import { useRef } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import { View, FlatList } from 'react-native';
 import { BottomSheetMethods } from '@devvie/bottom-sheet';
 
 import useStyles from './styles';
 import Header from '../../components/Header';
 import WeponIcon from '../../components/WeponIcon';
 import Bottomsheet from '../../components/Bottomsheet';
+import TextComponent from '../../components/TextComponent';
 
 const mock = [{
   id: '1',
@@ -38,7 +38,6 @@ const mock = [{
 }];
 
 export default function Home() {
-  const {t} = useTranslation();
   const style = useStyles();
 
   const bottomsheetRef = useRef<BottomSheetMethods>(null);
@@ -49,9 +48,11 @@ export default function Home() {
       <Header handleOpen={handleOpenOptions} />
 
       <View style={style.section}>
-          <Text style={style.text}>
-            {t('Base wepons')}
-          </Text>
+          <TextComponent
+            text='Base wepons'
+            bold
+            styles={style.text}
+          />
 
         <FlatList
           data={mock}
@@ -62,9 +63,11 @@ export default function Home() {
       </View>
 
       <View style={style.section}>
-        <Text style={style.text}>
-          {t('Ode to Castlevania')}
-        </Text>
+        <TextComponent
+            text='Ode to Castlevania'
+            bold
+            styles={style.text}
+          />
 
         <FlatList
           data={mock}

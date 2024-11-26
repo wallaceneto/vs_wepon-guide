@@ -2,21 +2,16 @@ import {StyleSheet} from 'react-native';
 import { useContext } from 'react';
 
 import { ThemeContext } from '../../context';
+import { ITextComponentStyle } from './types';
 
-const useStyles = () => {
+const useStyles = ({size, bold}: ITextComponentStyle) => {
   const {colors} = useContext(ThemeContext);
 
   return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.backgroundColor,
-    },
-    section: {
-      paddingHorizontal: 16,
-      marginTop: 24,
-    },
     text: {
-      marginBottom: 16, 
+      color: colors.textColor,
+      fontSize: size || 16,
+      fontWeight: bold ? 'bold' : 'regular',
     },
   });
 };

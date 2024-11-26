@@ -1,14 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import { View, TouchableOpacity } from 'react-native';
 import { Image, ImageBackground } from 'expo-image';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import useStyles from './styles';
 import { IHeaderProps } from './types';
+import TextComponent from '../TextComponent';
 
 const Header: React.FC<IHeaderProps> = ({ handleOpen }) => {
-  const {t} = useTranslation();
   const style = useStyles();
 
   return (
@@ -30,9 +29,11 @@ const Header: React.FC<IHeaderProps> = ({ handleOpen }) => {
       <View style={style.divider} />
 
       <View style={style.content}>
-        <Text style={style.title}>
-          {t('Evolution Guide')}
-        </Text>
+        <TextComponent 
+          text='Evolution Guide' 
+          size={20} 
+          bold
+        />
 
         <TouchableOpacity activeOpacity={0.7} onPress={handleOpen}>
           <Ionicons name="settings-sharp" size={24} color="white" />

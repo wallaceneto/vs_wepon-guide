@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import { useContext, version } from 'react';
+import { useContext } from 'react';
 
 import { ThemeContext } from '../../context';
 
@@ -15,16 +15,8 @@ const useStyles = () => {
       paddingHorizontal: 24,
     },
     title: {
-      color: colors.textColor,
-      fontWeight: 'bold',
-      fontSize: 20,
       marginBottom: 8,
     },
-    langText: {
-      color: colors.textColor,
-      fontSize: 16,
-    },
-    language: {},
     langOption: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -37,18 +29,13 @@ const useStyles = () => {
       marginRight: 8,
     },
     text: {
-      color: colors.textColor,
-      fontSize: 12,
       marginBottom: 8,
     },
-    about: {},
     aboutInfo: {
       paddingHorizontal: 16,
     },
     version: {
       marginTop: 32,
-      color: colors.textColor,
-      fontSize: 12,
       textAlign: 'center',
     },
   });
