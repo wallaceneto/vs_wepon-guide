@@ -7,9 +7,19 @@ const useStyles = () => {
   const {colors} = useContext(ThemeContext);
 
   return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.backgroundColor,
+    section: {
+      paddingHorizontal: 16,
+      marginTop: 24,
+    },
+    sectionLabel: {
+      flexDirection: 'row',
+      paddingVertical: 8, 
+    },
+    icon: {
+      color: colors.colapseItemColor,
+    },
+    text: {
+      marginLeft: 8, 
     },
   });
 };

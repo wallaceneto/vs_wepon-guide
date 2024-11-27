@@ -1,16 +1,15 @@
 import { useRef, useState } from 'react';
-import { View, FlatList } from 'react-native';
+import { View } from 'react-native';
 import { BottomSheetMethods } from '@devvie/bottom-sheet';
 
 import useStyles from './styles';
 import Header from '../../components/Header';
-import WeaponIcon from '../../components/WeaponIcon';
 import Bottomsheet from '../../components/Bottomsheet';
-import TextComponent from '../../components/TextComponent';
 import ItemModal from '../../components/ItemModal';
 
 import weapons from '../../../global/mocks/base_weapons';
 import { IWeapon } from '../../../global/types';
+import WeaponSection from '../../components/WeaponSection';
 
 export default function Home() {
   const style = useStyles();
@@ -32,23 +31,17 @@ export default function Home() {
 
       <Header handleOpen={handleOpenOptions} />
 
-      <View style={style.section}>
-        <TextComponent
-          text='Base weapons'
-          bold
-          styles={style.text}
-        />
+      <WeaponSection
+        title='Base weapons'
+        data={weapons}
+        handleOpenModal={handleOpenModal} 
+      />
 
-        <FlatList
-          data={weapons}
-          keyExtractor={item => item.id}
-          numColumns={5}
-          renderItem={
-            ({item}) => 
-            <WeaponIcon weapon={item} onPress={handleOpenModal} /> 
-          }
-        />
-      </View>
+      <WeaponSection
+        title='Ode to castlevania'
+        data={weapons}
+        handleOpenModal={handleOpenModal} 
+      />
 
       <Bottomsheet bottomsheetRef={bottomsheetRef} />
     </View>
