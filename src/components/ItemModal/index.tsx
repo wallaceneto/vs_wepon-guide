@@ -15,7 +15,7 @@ const ItemModal: React.FC<IItemModalProps> = ({ visible, setVisible, weapon}: II
   const style = useStyles();
 
   const evolution = weapon.evolution;
-  const requireSprite = passiveSprites[evolution.require_sprit as IPassiveSpriteKeys];
+  const requireSprite = passiveSprites[evolution.require_sprite as IPassiveSpriteKeys];
 
   return (
     <Modal

@@ -1,6 +1,6 @@
 export type IEvolution = {
-  sprit: string;
+  sprite: string;
   name: string;
   require_text: string;
-  require_sprit: string;
+  require_sprite: string;
 };

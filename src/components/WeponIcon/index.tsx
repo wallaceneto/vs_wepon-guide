@@ -16,8 +16,8 @@ const WeponIcon: React.FC<IWeaponIconProps> = ({
 }: IWeaponIconProps) => {
   const style = useStyles();
 
-  const weaponSprite = baseSprites[weapon.sprit as IBaseSpriteKeys]
-  const evolutionSprite = evolutionSprites[weapon.evolution.sprit as IEvolutionSpriteKeys]
+  const weaponSprite = baseSprites[weapon.sprite as IBaseSpriteKeys]
+  const evolutionSprite = evolutionSprites[weapon.evolution.sprite as IEvolutionSpriteKeys]
 
   const spriteIcon = () => {
     return (

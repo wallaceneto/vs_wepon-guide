@@ -2,54 +2,54 @@ const weapons =
 [
   {
     "id": "0",
-    "sprit": "Whip",
+    "sprite": "Whip",
     "name": "Whip",
     "max_level": 8,
     "unlock_requirements": "Unlocked by default",
     "evolution": {
-      "sprit": "Bloody_Tear",
+      "sprite": "Bloody_Tear",
       "name": "Bloody Tear",
       "require_text": "at any level",
-      "require_sprit": "Hollow_Heart"
+      "require_sprite": "Hollow_Heart"
     }
   },
   {
     "id": "1",
-    "sprit": "Magic_Wand",
+    "sprite": "Magic_Wand",
     "name": "Magic Wand",
     "max_level": 8,
     "unlock_requirements": "Unlocked by default",
     "evolution": {
-      "sprit": "Holy_Wand",
+      "sprite": "Holy_Wand",
       "name": "Holy Wand",
       "require_text": "at any level",
-      "require_sprit": "Empty_Tome"
+      "require_sprite": "Empty_Tome"
     }
   },
   {
     "id": "2",
-    "sprit": "Knife",
+    "sprite": "Knife",
     "name": "Knife",
     "max_level": 8,
     "unlock_requirements": "Unlocked by default",
     "evolution": {
-      "sprit": "Thousand_Edge",
+      "sprite": "Thousand_Edge",
       "name": "Thousand Edge",
       "require_text": "at any level",
-      "require_sprit": "Bracer"
+      "require_sprite": "Bracer"
     }
   },
   {
     "id": "3",
-    "sprit": "Axe",
+    "sprite": "Axe",
     "name": "Axe",
     "max_level": 8,
     "unlock_requirements": "Unlocked by default",
     "evolution": {
-      "sprit": "Death_Spiral",
+      "sprite": "Death_Spiral",
       "name": "Death Spiral",
       "require_text": "at any level",
-      "require_sprit": "Candelabrador"
+      "require_sprite": "Candelabrador"
     }
   }
 ];
