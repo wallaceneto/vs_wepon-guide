@@ -2,7 +2,7 @@ import { IWeapon } from "../../../../global/types";
 
 export type IWeaponIconProps = {
   weapon: IWeapon;
-  onPress?: (weapon: IWeapon) => void;
+  type: string;
+  onPress?: (weapon: IWeapon, type: string) => void;
   disable?: boolean;
-  evolution?: boolean;
 };

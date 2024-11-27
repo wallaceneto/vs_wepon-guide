@@ -5,25 +5,28 @@ import { Image } from 'expo-image';
 import useStyles from './styles';
 import { IWeaponIconProps } from './types';
 import { baseSprites } from '../../../global/requires';
-import { IBaseSpriteKeys, IEvolutionSpriteKeys } from '../../../global/types';
+import { IBaseSpriteKeys, ICastlevaniaSpriteKeys, IEvolutionSpriteKeys } from '../../../global/types';
 import { evolutionSprites } from '../../../global/requires/evolution-weapons-sprites';
+import { castlevaniaSprites } from '../../../global/requires/base-weapons-sprites copy';
 
 const WeaponIcon: React.FC<IWeaponIconProps> = ({ 
   weapon, 
-  onPress, 
+  type,
+  onPress,
   disable,
-  evolution
 }: IWeaponIconProps) => {
   const style = useStyles();
 
-  const weaponSprite = baseSprites[weapon.sprite as IBaseSpriteKeys]
-  const evolutionSprite = evolutionSprites[weapon.evolution.sprite as IEvolutionSpriteKeys]
+  const sprite = 
+    type === 'evolution' ? evolutionSprites[weapon.evolution.sprite as IEvolutionSpriteKeys] 
+    : type === 'castlevania' ? castlevaniaSprites[weapon.sprite as ICastlevaniaSpriteKeys]
+    : baseSprites[weapon.sprite as IBaseSpriteKeys];
 
   const spriteIcon = () => {
     return (
       <Image 
         style={style.image} 
-        source={evolution ? evolutionSprite : weaponSprite}
+        source={sprite}
       />
     );
   }
@@ -36,7 +39,7 @@ const WeaponIcon: React.FC<IWeaponIconProps> = ({
     :
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={onPress ? () => onPress(weapon) : () => {}}
+        onPress={onPress ? () => onPress(weapon, type) : () => {}}
         style={style.container}
       >
         {spriteIcon()}

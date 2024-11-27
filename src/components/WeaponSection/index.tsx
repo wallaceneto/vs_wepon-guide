@@ -7,7 +7,7 @@ import TextComponent from '../TextComponent';
 import { IWeaponSectionProps } from './types/IWeaponSectionProps';
 import { useState } from 'react';
 
-const WeaponSection: React.FC<IWeaponSectionProps> = ({ handleOpenModal, title, data }: IWeaponSectionProps) => {
+const WeaponSection: React.FC<IWeaponSectionProps> = ({ handleOpenModal, title, data, type }: IWeaponSectionProps) => {
   const style = useStyles();
 
   const [opened, setOpened] = useState(true);
@@ -40,7 +40,7 @@ const WeaponSection: React.FC<IWeaponSectionProps> = ({ handleOpenModal, title, 
             numColumns={5}
             renderItem={
               ({item}) => 
-              <WeaponIcon weapon={item} onPress={handleOpenModal} /> 
+              <WeaponIcon type={type} weapon={item} onPress={handleOpenModal} /> 
             }
           />
         : null
