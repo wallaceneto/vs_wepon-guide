@@ -7,7 +7,7 @@ import useStyles from './styles';
 import TextComponent from '../TextComponent';
 import { IItemModalProps } from './types';
 
-import WeponIcon from '../WeponIcon';
+import WeaponIcon from '../WeaponIcon';
 import { IPassiveSpriteKeys } from '../../../global/types';
 import { passiveSprites } from '../../../global/requires';
 
@@ -27,7 +27,7 @@ const ItemModal: React.FC<IItemModalProps> = ({ visible, setVisible, weapon}: II
         <View style={style.card}>
           <View style={style.header}>
             <View style={style.headerLeft}>
-              <WeponIcon weapon={weapon} disable />
+              <WeaponIcon weapon={weapon} disable />
 
               <TextComponent 
                 text={weapon.name} 
@@ -75,7 +75,7 @@ const ItemModal: React.FC<IItemModalProps> = ({ visible, setVisible, weapon}: II
             />
 
             <View style={style.evolutionContainer}>
-              <WeponIcon evolution weapon={weapon} disable />
+              <WeaponIcon evolution weapon={weapon} disable />
 
               <View style={style.evolutionInfo}>
                 <TextComponent

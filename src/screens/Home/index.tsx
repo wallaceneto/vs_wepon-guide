@@ -4,7 +4,7 @@ import { BottomSheetMethods } from '@devvie/bottom-sheet';
 
 import useStyles from './styles';
 import Header from '../../components/Header';
-import WeponIcon from '../../components/WeponIcon';
+import WeaponIcon from '../../components/WeaponIcon';
 import Bottomsheet from '../../components/Bottomsheet';
 import TextComponent from '../../components/TextComponent';
 import ItemModal from '../../components/ItemModal';
@@ -45,7 +45,7 @@ export default function Home() {
           numColumns={5}
           renderItem={
             ({item}) => 
-            <WeponIcon weapon={item} onPress={handleOpenModal} /> 
+            <WeaponIcon weapon={item} onPress={handleOpenModal} /> 
           }
         />
       </View>

@@ -8,7 +8,7 @@ import { baseSprites } from '../../../global/requires';
 import { IBaseSpriteKeys, IEvolutionSpriteKeys } from '../../../global/types';
 import { evolutionSprites } from '../../../global/requires/evolution-weapons-sprites';
 
-const WeponIcon: React.FC<IWeaponIconProps> = ({ 
+const WeaponIcon: React.FC<IWeaponIconProps> = ({ 
   weapon, 
   onPress, 
   disable,
@@ -44,4 +44,4 @@ const WeponIcon: React.FC<IWeaponIconProps> = ({
   );
 }
 
-export default WeponIcon;
+export default WeaponIcon;
