@@ -6,8 +6,8 @@ import useStyles from './styles';
 import { IWeaponIconProps } from './types';
 import { baseSprites } from '../../../global/requires';
 import { IBaseSpriteKeys, ICastlevaniaSpriteKeys, IEvolutionSpriteKeys } from '../../../global/types';
-import { evolutionSprites } from '../../../global/requires/evolution-weapons-sprites';
-import { castlevaniaSprites } from '../../../global/requires/base-weapons-sprites copy';
+import { evolutionSprites } from '../../../global/requires';
+import { castlevaniaSprites } from '../../../global/requires';
 
 const WeaponIcon: React.FC<IWeaponIconProps> = ({ 
   weapon, 
