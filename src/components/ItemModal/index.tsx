@@ -75,7 +75,7 @@ const ItemModal: React.FC<IItemModalProps> = ({ visible, setVisible, weapon}: II
             />
 
             <View style={style.evolutionContainer}>
-              <WeponIcon weapon={weapon} disable />
+              <WeponIcon evolution weapon={weapon} disable />
 
               <View style={style.evolutionInfo}>
                 <TextComponent

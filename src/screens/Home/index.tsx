@@ -34,7 +34,7 @@ export default function Home() {
 
       <View style={style.section}>
         <TextComponent
-          text='Base wepons'
+          text='Base weapons'
           bold
           styles={style.text}
         />

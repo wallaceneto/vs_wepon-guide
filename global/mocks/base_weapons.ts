@@ -38,6 +38,19 @@ const weapons =
       "require_text": "at any level",
       "require_sprit": "Bracer"
     }
+  },
+  {
+    "id": "3",
+    "sprit": "Axe",
+    "name": "Axe",
+    "max_level": 8,
+    "unlock_requirements": "Unlocked by default",
+    "evolution": {
+      "sprit": "Death_Spiral",
+      "name": "Death Spiral",
+      "require_text": "at any level",
+      "require_sprit": "Candelabrador"
+    }
   }
 ];
 

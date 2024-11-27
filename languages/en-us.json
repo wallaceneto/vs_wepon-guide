@@ -1,7 +1,7 @@
 {
   "translation": {
     "Evolution Guide": "Evolution Guide",
-    "Base wepons": "Base wepons",
+    "Base weapons": "Base weapons",
     "Ode to Castlevania": "Ode to Castlevania",
     "Max level": "Max level: {{level}}",
     "Unlock": "Unlock:",
@@ -16,6 +16,5 @@
     "License info": "All icons and itens descriptions are from the Vampire Survivors Wiki and is avaliable under CC-BY-SA",
     "Icon info": "The flag icons where obtain from https://www.flaticon.com/authors/freepik",
     "Version": "Version 0.1.0"
-  },
-  "Base wepons": ""
+  }
 }

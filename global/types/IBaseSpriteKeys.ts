@@ -1,2 +1,2 @@
 export type IBaseSpriteKeys = 
-'Whip' | 'Magic_Wand' | 'Knife';
+'Whip' | 'Magic_Wand' | 'Knife' | 'Axe';

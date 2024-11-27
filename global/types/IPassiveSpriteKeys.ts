@@ -1,2 +1,2 @@
 export type IPassiveSpriteKeys = 
-'Hollow_Heart' | 'Empty_Tome' | 'Bracer';
+'Hollow_Heart' | 'Empty_Tome' | 'Bracer' | 'Candelabrador';

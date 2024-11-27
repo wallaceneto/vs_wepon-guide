@@ -5,32 +5,41 @@ import { Image } from 'expo-image';
 import useStyles from './styles';
 import { IWeaponIconProps } from './types';
 import { baseSprites } from '../../../global/requires';
-import { IBaseSpriteKeys } from '../../../global/types';
+import { IBaseSpriteKeys, IEvolutionSpriteKeys } from '../../../global/types';
+import { evolutionSprites } from '../../../global/requires/evolution-weapons-sprites';
 
-const WeponIcon: React.FC<IWeaponIconProps> = ({ weapon, onPress, disable }: IWeaponIconProps) => {
+const WeponIcon: React.FC<IWeaponIconProps> = ({ 
+  weapon, 
+  onPress, 
+  disable,
+  evolution
+}: IWeaponIconProps) => {
   const style = useStyles();
 
-  const weaponSprit = baseSprites[weapon.sprit as IBaseSpriteKeys]
+  const weaponSprite = baseSprites[weapon.sprit as IBaseSpriteKeys]
+  const evolutionSprite = evolutionSprites[weapon.evolution.sprit as IEvolutionSpriteKeys]
+
+  const spriteIcon = () => {
+    return (
+      <Image 
+        style={style.image} 
+        source={evolution ? evolutionSprite : weaponSprite}
+      />
+    );
+  }
 
   return (
     disable ? 
       <View style={style.container}>
-        <Image 
-          style={style.image} 
-          source={weaponSprit}
-        />
+        {spriteIcon()}
       </View>
     :
       <TouchableOpacity
         activeOpacity={0.7}
         onPress={onPress ? () => onPress(weapon) : () => {}}
+        style={style.container}
       >
-        <View style={style.container}>
-          <Image 
-            style={style.image} 
-            source={weaponSprit}
-          />
-        </View>
+        {spriteIcon()}
       </TouchableOpacity>
   );
 }

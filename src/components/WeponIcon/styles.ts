@@ -10,8 +10,8 @@ const useStyles = () => {
     container: {
       backgroundColor: colors.cardBorderColor,
       borderRadius: 8,
-      height: 60,
-      width: 60,
+      height: 64,
+      width: 64,
       justifyContent: 'center',
       alignItems: 'center',
       marginHorizontal: 6,
@@ -20,8 +20,8 @@ const useStyles = () => {
     image: {
       backgroundColor: colors.cardBgColor,
       borderRadius: 8,
-      height: 53,
-      width: 53,
+      height: 57,
+      width: 57,
     },
   });
 };
