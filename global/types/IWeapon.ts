@@ -4,7 +4,7 @@ export type IWeapon = {
   id: string;
   sprite: string;
   name: string;
-  max_level: number;
+  max_level: string;
   unlock_requirements: string;
   evolution: IEvolution;
 };

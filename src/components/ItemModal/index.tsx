@@ -54,7 +54,7 @@ const ItemModal: React.FC<IItemModalProps> = ({visible, setVisible, weapon, type
                 text='Max level'
                 bold
               />
-              <TextComponent text={weapon.max_level.toString()} />
+              <TextComponent text={weapon.max_level} />
             </View>
 
             <View style={style.contentTopic}>
