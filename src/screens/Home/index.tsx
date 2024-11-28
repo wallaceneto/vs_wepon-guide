@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { BottomSheetMethods } from '@devvie/bottom-sheet';
 
 import useStyles from './styles';
@@ -28,6 +28,23 @@ export default function Home() {
     setModalVisible(true);
   }
 
+  const sections = () => {
+    return ([
+      <WeaponSection
+        title='Base weapons'
+        data={weapons}
+        type='base'
+        handleOpenModal={handleOpenModal} 
+      />,
+      <WeaponSection
+        title='Ode to castlevania'
+        data={castlevania}
+        type='castlevania'
+        handleOpenModal={handleOpenModal} 
+      />
+    ]);
+  };
+
   return (
     <View style={style.container}>
       <ItemModal 
@@ -37,20 +54,11 @@ export default function Home() {
         setVisible={setModalVisible}
       />
 
-      <Header handleOpen={handleOpenOptions} />
-
-      <WeaponSection
-        title='Base weapons'
-        data={weapons}
-        type='base'
-        handleOpenModal={handleOpenModal} 
-      />
-
-      <WeaponSection
-        title='Ode to castlevania'
-        data={castlevania}
-        type='castlevania'
-        handleOpenModal={handleOpenModal} 
+      <FlatList
+        data={sections()}
+        keyExtractor={(_, index) => index.toString()}
+        renderItem={({item}) => item}
+        ListHeaderComponent={<Header handleOpen={handleOpenOptions} />}
       />
 
       <Bottomsheet bottomsheetRef={bottomsheetRef} />
