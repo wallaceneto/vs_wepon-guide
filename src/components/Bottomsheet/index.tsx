@@ -3,11 +3,13 @@ import { View, TouchableOpacity } from 'react-native';
 import i18next from 'i18next';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import BottomSheet from '@devvie/bottom-sheet';
-
+import { Image } from 'expo-image';
 import useStyles from './styles';
 import { IBottomsheetProps } from './types';
-import { Image } from 'expo-image';
 import TextComponent from '../TextComponent';
+
+const pkg = require('../../../package.json');
+const appVersion = pkg.version;
 
 const Bottomsheet: React.FC<IBottomsheetProps> = ({ bottomsheetRef }) => {
   const style = useStyles();
@@ -84,7 +86,7 @@ const Bottomsheet: React.FC<IBottomsheetProps> = ({ bottomsheetRef }) => {
         </View>
 
         <TextComponent
-          text='Version'
+          text={`Version ${appVersion}`}
           size={12}
           styles={style.version}
         />

@@ -11,7 +11,7 @@ import WeaponIcon from '../WeaponIcon';
 import { IPassiveSpriteKeys } from '../../../global/types';
 import { passiveSprites } from '../../../global/requires';
 
-const ItemModal: React.FC<IItemModalProps> = ({visible, setVisible, weapon, type}: IItemModalProps) => {
+const ItemModal: React.FC<IItemModalProps> = ({ visible, setVisible, weapon, type }: IItemModalProps) => {
   const style = useStyles();
 
   const evolution = weapon.evolution;
@@ -29,28 +29,28 @@ const ItemModal: React.FC<IItemModalProps> = ({visible, setVisible, weapon, type
             <View style={style.headerLeft}>
               <WeaponIcon type={type} weapon={weapon} disable />
 
-              <TextComponent 
-                text={weapon.name} 
-                bold 
-                size={20} 
-                styles={style.headerText}  
+              <TextComponent
+                text={weapon.name}
+                bold
+                size={20}
+                styles={style.headerText}
               />
             </View>
 
-            <TouchableOpacity 
-              activeOpacity={0.7} 
+            <TouchableOpacity
+              activeOpacity={0.7}
               onPress={() => setVisible(false)}
             >
               <Ionicons name="close" size={32} color="white" />
             </TouchableOpacity>
-            
+
           </View>
 
           <View style={style.divider} />
 
           <View style={style.content}>
             <View style={style.contentTopic}>
-              <TextComponent 
+              <TextComponent
                 text='Max level'
                 bold
               />
@@ -58,12 +58,12 @@ const ItemModal: React.FC<IItemModalProps> = ({visible, setVisible, weapon, type
             </View>
 
             <View style={style.contentTopic}>
-              <TextComponent 
+              <TextComponent
                 text='Unlock'
                 bold
               />
-              <TextComponent 
-                text={weapon.unlock_requirements} 
+              <TextComponent
+                text={`Descriptions.${weapon.unlock_requirements}`}
                 styles={style.contentTopicText}
               />
             </View>
@@ -88,7 +88,7 @@ const ItemModal: React.FC<IItemModalProps> = ({visible, setVisible, weapon, type
                     text='Requires'
                     bold
                   />
-                  
+
                   <Image
                     source={requireSprite}
                     style={style.requiredImage}
