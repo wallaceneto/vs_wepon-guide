@@ -28,36 +28,32 @@ export default function Home() {
     setModalVisible(true);
   }
 
-  const sections = () => {
-    return ([
-      <WeaponSection
-        title='Base weapons'
-        data={weapons}
-        type='base'
-        handleOpenModal={handleOpenModal} 
-      />,
-      <WeaponSection
-        title='Ode to castlevania'
-        data={castlevania}
-        type='castlevania'
-        handleOpenModal={handleOpenModal} 
-      />
-    ]);
-  };
-
   return (
     <View style={style.container}>
-      <ItemModal 
-        type={currentType} 
-        weapon={currentWeapon} 
-        visible={modalVisible} 
+      <ItemModal
+        type={currentType}
+        weapon={currentWeapon}
+        visible={modalVisible}
         setVisible={setModalVisible}
       />
 
       <FlatList
-        data={sections()}
+        data={[
+          <WeaponSection
+            title='Base weapons'
+            data={weapons}
+            type='base'
+            handleOpenModal={handleOpenModal}
+          />,
+          <WeaponSection
+            title='Ode to castlevania'
+            data={castlevania}
+            type='castlevania'
+            handleOpenModal={handleOpenModal}
+          />
+        ]}
         keyExtractor={(_, index) => index.toString()}
-        renderItem={({item}) => item}
+        renderItem={({ item }) => item}
         ListHeaderComponent={<Header handleOpen={handleOpenOptions} />}
       />
 

@@ -9,23 +9,25 @@ import { ThemeProvider } from './src/context';
 
 export default function App() {
 
-  const loadLanguage = async () => {
-    try {
-      const storedLanguage = await AsyncStorage.getItem('app-language');
-      if (storedLanguage) {
-        i18next.changeLanguage(storedLanguage);
+  useEffect(() => {
+    const loadLanguage = async () => {
+      try {
+        const storedLanguage = await AsyncStorage.getItem('app-language');
+        if (storedLanguage) {
+          i18next.changeLanguage(storedLanguage);
+        }
+      } catch (e) {
+        console.log(e);
       }
-    } catch(e) {
-      console.log(e);
     }
-  }
 
-  useEffect(() => {loadLanguage()}, []);
+    loadLanguage();
+  }, []);
 
   return (
     <ThemeProvider>
       <SafeAreaView style={{ flex: 1 }}>
-        <StatusBar barStyle="light-content"  />
+        <StatusBar barStyle="light-content" />
         <Home />
       </SafeAreaView>
     </ThemeProvider>
