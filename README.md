@@ -18,10 +18,10 @@ Um guia ilustrado para o jogo “Vampire Survivors”, com um catalogo de como o
 <table align="center">
   <tr>
     <td align="center">
-      <img src="assets/screenshot-1.png" alt="Homepage Jogabilista" width="200"/><br/>
+      <img src="assets/Screenshot-1.png" alt="Homepage Jogabilista" width="200"/><br/>
     </td>
     <td align="center">
-      <img src="assets/screenshot-2.png" alt="Tela de Detalhes do Jogo" width="200"/><br/>
+      <img src="assets/Screenshot-2.png" alt="Tela de Detalhes do Jogo" width="200"/><br/>
     </td>
   </tr>
 </table>
